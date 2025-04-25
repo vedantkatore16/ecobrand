@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | EcoBrand Online</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #2e8b57;
+            --light-green: #9acd32;
+            --dark-green: #1a5632;
+            --ocean-blue: #1e88e5;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            margin-bottom: 50px;
+            height: 4rem;
+        }
+        
+        .contact-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            border: none;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .contact-header {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 20px;
+        }
+        
+        .btn-eco {
+            background-color: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+        }
+        
+        .btn-eco:hover {
+            background-color: var(--dark-green);
+            color: white;
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+        
+        .info-card {
+            border-left: 5px solid var(--primary-green);
+            transition: all 0.3s;
+        }
+        
+        .info-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-control:focus {
+            border-color: var(--light-green);
+            box-shadow: 0 0 0 0.25rem rgba(46, 139, 87, 0.25);
+        }
+        
+        .online-presence {
+            background-color: #f0f8ff;
+            border-radius: 10px;
+            padding: 30px;
+        }
+        
+        .digital-icon {
+            font-size: 3rem;
+            color: var(--ocean-blue);
+            margin-bottom: 20px;
+        }
+        
+        footer {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-globe me-2"></i>EcoBrand
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Initiatives</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./Contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Connect With EcoBrand</h1>
+            <p class="lead">As a fully online environmental platform, we're just a click away.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section mb-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Contact Form -->
+                <div class="col-lg-7">
+                    <div class="card contact-card h-100">
+                        <div class="contact-header">
+                            <h3><i class="fas fa-envelope me-2"></i>Send Us a Message</h3>
+                        </div>
+                        <div class="card-body">
+                            <form id="contactForm">
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6 mb-3 mb-md-0">
+                                        <label for="firstName" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" id="firstName" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lastName" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" id="lastName" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <select class="form-select" id="subject">
+                                        <option selected>Choose a topic</option>
+                                        <option>Partnership Inquiry</option>
+                                        <option>Volunteer Opportunity</option>
+                                        <option>Content Submission</option>
+                                        <option>Technical Support</option>
+                                        <option>General Inquiry</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Your Message</label>
+                                    <textarea class="form-control" id="message" rows="5" required></textarea>
+                                </div>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-eco btn-lg">
+                                        <i class="fas fa-paper-plane me-2"></i>Send Message
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Digital Presence -->
+                <div class="col-lg-5">
+                    <div class="card contact-card h-100">
+                        <div class="contact-header">
+                            <h3><i class="fas fa-network-wired me-2"></i>Our Digital Presence</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="text-center mb-5">
+                                <i class="fas fa-cloud digital-icon"></i>
+                                <h4>EcoBrand Online</h4>
+                                <p class="text-muted">Connecting environmentalists worldwide through digital platforms</p>
+                            </div>
+                            
+                            <div class="card info-card mb-3">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="me-3">
+                                            <i class="fas fa-envelope fs-4 text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">Email Us</h5>
+                                            <p class="mb-0">contact@EcoBrand.org</p>
+                                            <p class="mb-0">support@EcoBrand.org (for technical issues)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card info-card mb-3">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="me-3">
+                                            <i class="fas fa-comments fs-4 text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">Live Chat</h5>
+                                            <p class="mb-0">Available Mon-Fri, 9am-5pm UTC</p>
+                                            <a href="#" class="btn btn-sm btn-outline-primary mt-2">Start Chat</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                           
+                            
+                            <hr class="my-4">
+                            
+                            <h5 class="mb-3">Connect With Our Community</h5>
+                            <div class="d-flex flex-wrap justify-content-center">
+                                <a href="#" class="btn btn-outline-primary btn-sm m-2"><i class="fab fa-discord me-1"></i> Discord</a>
+                                <a href="#" class="btn btn-outline-primary btn-sm m-2"><i class="fab fa-slack me-1"></i> Slack</a>
+                                <a href="#" class="btn btn-outline-primary btn-sm m-2"><i class="fab fa-facebook-f me-1"></i> Facebook</a>
+                                <a href="#" class="btn btn-outline-primary btn-sm m-2"><i class="fab fa-twitter me-1"></i> Twitter</a>
+                                <a href="#" class="btn btn-outline-primary btn-sm m-2"><i class="fab fa-instagram me-1"></i> Instagram</a>
+                                <a href="#" class="btn btn-outline-primary btn-sm m-2"><i class="fab fa-linkedin-in me-1"></i> LinkedIn</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="thankYouModalLabel">Thank You!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Your message has been sent successfully. We will get back to you soon.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-eco" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5><i class="fas fa-leaf me-2"></i>EcoBrand</h5>
+                    <p>Protecting our planet one step at a time.</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="./Home.html" class="text-white">Home</a></li>
+                        <li><a href="#" class="text-white">About Us</a></li>
+                        <li><a href="#" class="text-white">Our Projects</a></li>
+                        <li><a href="#" class="text-white">Get Involved</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Legal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-white">Terms of Service</a></li>
+                        <li><a href="#" class="text-white">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <p class="mb-0">&copy; 2025 Green Earth Initiative. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS & jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS for handling form submission and modal trigger -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Trigger the modal
+            var myModal = new bootstrap.Modal(document.getElementById('thankYouModal'));
+            myModal.show();
+        });
+    </script>
+</body>
+</html>

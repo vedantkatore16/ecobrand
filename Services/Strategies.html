@@ -1,0 +1,273 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Economy Strategies </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .nav-item a:hover {
+            color: green;
+            transition: color 0.5s ease-in-out;
+        }
+
+        .dropdown-menu {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .group:hover .dropdown-menu {
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .group .dropdown-menu a {
+            transition: color 0.3s ease-in-out;
+        }
+
+        .group .dropdown-menu a:hover {
+            color: green;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 mt-1">
+    <!-- navbar  -->
+    <nav class="bg-white py-4 text-center ">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <!-- Logo on the left -->
+            <div class="flex items-center space-x-2 h-8 ">
+                <img src="./../images/logo.jpg" alt="EcoBrand Logo" class="h-12 w-auto ml-10">
+
+            </div>
+            <ul class="flex space-x-8 text-gray-800 mx-auto mr-12 px-20 font-bold text-1xl">
+                <li class="nav-item"><a href="./../Home.html" class="hover:text-gray-600">Home</a></li>
+                <li class="relative group nav-item">
+                    <a href="#" class="hover:text-gray-600">Services <i
+                            class="fas fa-chevron-down hover:text-gray-600"></i></a>
+                    <ul class="absolute left-0 dropdown-menu mt-2 space-x-2 bg-white border border-gray-200">
+                        <li><a href="./Carbon.html" class="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap">Carbon
+                                Accounting</a></li>
+                        <li><a href="./ESGRepo.html" class="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap">ESG
+                                Reporting</a></li>
+                        <li><a href="./ESGBench.html" class="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap">ESG
+                                Benchmarking</a></li>
+                        <li><a href="./LifeCycle.html" class="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap">Life
+                                Cycle Assessment</a></li>
+                        <li><a href="./SupplyChain.html"
+                                class="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap">Sustainable Supply
+                                Chains</a></li>
+                        <li><a href="./Strategies.html"
+                                class="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap">Circular Economy
+                                Strategies</a></li>
+                        <li><a href="./Embedded.html"
+                                class="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap">Embedding Sustainability</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="relative group nav-item">
+                    <a href="#" class="hover:text-gray-600">Sectors <i
+                            class="fas fa-chevron-down hover:text-gray-600"></i></a>
+                            <ul class="absolute left-0 dropdown-menu mt-2 space-x-2 bg-white border border-gray-200">
+                        <li><a href="./../Sectors/energy.html" class="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap">Energy Sector</a>
+                        </li>
+                        <li><a href="./../Sectors/transport.html" class="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap">Transportation and
+                                Logistics Sector</a></li>
+                        <li><a href="./../Sectors/fmcg.html" class="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap">FMCG Sector</a></li>
+                        <li><a href="./../Sectors/Health.html" class="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap">Health and Pharmaceutical Sector</a></li>
+                        <li><a href="./../Sectors/manufacture.html" class="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap">Manufacturing and
+                                Industrial Sector</a></li>
+                        <li><a href="./../Sectors/retail.html" class="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap">Retail and
+                                E-Commerce Sector</a></li>
+                        <li><a href="./../Sectors/realestate.html" class="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap">Real Estate and
+                                Infrastructure Sector</a></li>
+                        <li><a href="./../Sectors/tech.html" class="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap">Technology and IT
+                                Services Sector</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#" class="hover:text-gray-600">Blogs</a></li>
+                <li class="nav-item"><a href="aboutus.html" class="hover:text-gray-600">About Us</a></li>
+                <li class="nav-item"><a href="contact.html" class="hover:text-gray-600">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="bg-lime-300 text-center py-12">
+        <div class="text-6xl font-bold text-gray-800 flex justify-center items-center">
+            <i class="fas fa-leaf mr-2"></i>
+            Circular Economy Strategies
+        </div>
+        <p class="mt-4 text-gray-700 text-2xl">
+            Adopt strategies that focus on reducing waste, reusing resources, and <br> creating circular business
+            models.
+        </p>
+    </div>
+
+    <div class="max-w-7xl mx-auto bg-white p-6 rounded-lg shadow-md mt-20 ">
+        <div class="flex items-center mb-4">
+            <i class="fas fa-check-circle text-black-600 text-xl mr-2"></i>
+            <h2 class="text-2xl font-semibold">How It Helps</h2>
+        </div>
+        <div class="space-y-4">
+            <div
+                class="flex items-center bg-gray-100 p-4 rounded-lg border-l-4 border-green-500 hover:bg-gray-200 transition-transform transform hover:translate-x-1 hover:translate-y-1 duration-200">
+                <i class="fas fa-shield-alt text-black-600 text-xl mr-4"></i>
+                <p class="text-lg"> Lower operational costs by utilizing reusable materials.</p>
+            </div>
+            <div
+                class="flex items-center bg-gray-100 p-4 rounded-lg border-l-4 border-green-500 hover:bg-gray-200 transition-transform transform hover:translate-x-1 hover:translate-y-1 duration-200">
+                <i class="fas fa-lightbulb text-black-600 text-xl mr-4"></i>
+                <p class="text-lg"> Open new revenue streams with recycled or upcycled products.</p>
+            </div>
+            <div
+                class="flex items-center bg-gray-100 p-4 rounded-lg border-l-4 border-green-500 hover:bg-gray-200 transition-transform transform hover:translate-x-1 hover:translate-y-1 duration-200">
+                <i class="fas fa-star text-black-600 text-xl mr-4"></i>
+                <p class="text-lg">Achieve sustainability goals with innovative practices.</p>
+            </div>
+        </div>
+        <div
+            class="mt-6 bg-blue-900 text-white p-4 rounded-lg hover:bg-blue-800 transition-transform transform hover:translate-x-1 hover:translate-y-1 duration-200">
+            <div class="flex items-center">
+                <i class="fas fa-globe text-yellow-400 text-xl mr-4"></i>
+                <h3 class="text-xl font-semibold text-yellow-400">Real-Life Example</h3>
+            </div>
+            <p class="mt-2 text-lg">A furniture company saved $2 million annually by implementing a circular economy
+                model for wood waste.
+            </p>
+        </div>
+    </div>
+    <!-- footer  -->
+
+    <footer class="py-10 bg-[#0A2540] text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div class="mb-4 md:mb-0">
+                    <h1 class="text-2xl font-bold text-[#A3D900] mx-auto">
+                        Eco Brand<span class="text-white"></span>
+                    </h1>
+                </div>
+                <div class="flex flex-col md:flex-row md:space-x-16 text-center md:text-left mx-auto">
+                    <div class="mb-4 md:mb-0">
+                        <h3 class="font-bold mb-2">
+                            Company
+                        </h3>
+                        <ul>
+                            <li class="mb-1">
+                                <a class="hover:text-[#A3D900] transition duration-300" href="#">
+                                    Home
+                                </a>
+                            </li>
+                            <li class="mb-1">
+                                <a class="hover:text-[#A3D900] transition duration-300" href="#">
+                                    Services
+                                </a>
+                            </li>
+                            <li class="mb-1">
+                                <a class="hover:text-[#A3D900] transition duration-300" href="#">
+                                    About Us
+                                </a>
+                            </li>
+                            <li class="mb-1">
+                                <a class="hover:text-[#A3D900] transition duration-300" href="#">
+                                    Sector
+                                </a>
+                            </li>
+                            <li class="mb-1">
+                                <a class="hover:text-[#A3D900] transition duration-300" href="#">
+                                    Contact Us
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mb-4 md:mb-0">
+                        <h3 class="font-bold mb-2">
+                            Legal
+                        </h3>
+                        <ul>
+                            <li class="mb-1">
+                                <a class="hover:text-[#A3D900] transition duration-300" href="#">
+                                    Terms of Use
+                                </a>
+                            </li>
+                            <li class="mb-1">
+                                <a class="hover:text-[#A3D900] transition duration-300" href="#">
+                                    Privacy Policy
+                                </a>
+                            </li>
+                            <li class="mb-1">
+                                <a class="hover:text-[#A3D900] transition duration-300" href="#">
+                                    Cookie Policy
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-2">
+                            Subscribe to our newsletter:
+                        </h3>
+                        <form class="flex justify-center md:justify-start">
+                            <input class="px-4 py-2 rounded-l-md text-black" placeholder="Email Address" required=""
+                                type="email" />
+                            <button
+                                class="bg-[#A3D900] text-black px-4 py-2 rounded-r-md hover:bg-white transition duration-300"
+                                type="submit">
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="mt-10 border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center mr-10">
+                <p class="text-sm ml-10">
+                    © 2024 Eco Brand. All Rights Reserved
+                </p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a class="text-gray-400 hover:text-white transition duration-300" href="#">
+                        <i class="fab fa-linkedin">
+                        </i>
+                    </a>
+                    <a class="text-gray-400 hover:text-white transition duration-300" href="#">
+                        <i class="fas fa-infinity">
+                        </i>
+                    </a>
+                    <a class="text-gray-400 hover:text-white transition duration-300" href="#">
+                        <i class="fas fa-times">
+                        </i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.querySelectorAll('.group').forEach(group => {
+            let timeout;
+
+            group.addEventListener('mouseenter', () => {
+                clearTimeout(timeout);
+                const dropdown = group.querySelector('.dropdown-menu');
+                dropdown.style.display = 'flex';
+                setTimeout(() => {
+                    dropdown.style.opacity = '1';
+                    dropdown.style.transform = 'translateY(0)';
+                }, 50);
+            });
+
+            group.addEventListener('mouseleave', () => {
+                const dropdown = group.querySelector('.dropdown-menu');
+                dropdown.style.opacity = '0';
+                dropdown.style.transform = 'translateY(10px)';
+                timeout = setTimeout(() => {
+                    dropdown.style.display = 'none';
+                }, 300); // delay to allow transition to complete
+            });
+        });
+    </script>
+</body>
+
+</html>
