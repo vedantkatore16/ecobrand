@@ -250,6 +250,23 @@
         gap: 20px;
       }
     }
+    .back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #12243A;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s;
+}
+
+.back-button:hover {
+  background: #fff;
+}
     </style>
   </head>
   <body>
@@ -360,5 +377,6 @@
         track.style.transform = `translateX(${-caseIndex * 100}%)`;
       }
     </script>
+     <a href="./../Home.html" class="back-button">← Back to Home</a>
   </body>
 </html>
