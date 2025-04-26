@@ -54,43 +54,37 @@
       --dark-green: #1a5632;
     }
     body {
-      
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f8f9fa;
-      color: #333;
-    }
-    .hero-section {
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                  url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat;
-      color: white;
-      padding: 50px 0;
-      text-align: center;
-    }
-    .section {
-      padding: 30px 15px;
-    }
-    .section h2 {
-      color: var(--primary-green);
-      margin-bottom: 15px;
-      font-size: 1.25rem;
-    }
-    .card-custom {
-      background: #fff;
-      border-left: 6px solid var(--primary-green);
-      padding: 15px;
-      margin-bottom: 15px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      font-size: 0.95rem;
-    }
-    .highlight {
-      background-color: #eafbea;
-      padding: 0.75rem;
-      border-radius: 8px;
-      font-size: 0.9rem;
-    }
-    h5 { font-size: 1rem; }
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+      }
 
+      .section {
+        padding: 40px 15px;
+      }
+      .section h2 {
+        color: var(--light-green);
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .blog-card {
+        background: #fff;
+        border-left: 6px solid var(--primary-green);
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      }
+      .blog-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+      .blog-meta {
+        font-size: 0.85rem;
+        color: #666;
+        margin-bottom: 10px;
+      }
+      
       footer {
       background-color: #12243A;
       padding: 3rem 1rem 1rem 1rem;
@@ -153,7 +147,7 @@
         <div class="collapse navbar-collapse show">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="./Home.html">Home</a>
+              <a class="nav-link" href="Home.html">Home</a>
             </li>
 
             <li class="nav-item dropdown">
@@ -171,6 +165,7 @@
               </ul>
             </li>
 
+           
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button">
                 Sectors
@@ -216,15 +211,10 @@
               </ul>
             </li>
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button">
-                Blogs
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Latest News</a></li>
-                <li><a class="dropdown-item" href="#">Insights</a></li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="./Blog.html">Blog</a>
             </li>
+              
 
             <li class="nav-item">
               <a class="nav-link" href="./About.html">About Us</a>
@@ -240,80 +230,12 @@
 
    
     <body>
-      
-      <section class="hero-section">
-        <div class="container">
-          <h1 class="display-6 fw-bold">Empowering a Greener Tomorrow</h1>
-          <p class="lead">Sustainable strategies, transparent solutions, and a cleaner planet — together.</p>
+      <div class="container section">
+        <h2>Latest News</h2>
+        <div class="alert alert-info" role="alert">
+          Blog posts are yet to be added. Stay tuned for updates!
         </div>
-      </section>
-    
-      <!-- Mission Section -->
-      <section class="section">
-        <div class="container">
-          <h2>Our Mission</h2>
-          <div class="card-custom">
-            <p>
-              At <strong>Planetary Plus</strong>, we are redefining sustainability by offering cutting-edge consulting services to businesses across industries. Our mission is to help organizations transition towards a greener future by embedding sustainability at the heart of their operations.
-            </p>
-          </div>
-        </div>
-      </section>
-    
-      <!-- Vision Section -->
-      <section class="section">
-        <div class="container">
-          <h2>Our Vision</h2>
-          <div class="card-custom">
-            <p>
-              We envision a world where businesses thrive while prioritizing sustainability. Our goal is to empower organizations to embrace environmental stewardship, social accountability, and robust governance, creating a positive impact on both their communities and the planet.
-            </p>
-          </div>
-        </div>
-      </section>
-    
-      <!-- What We Do -->
-    <section class="section bg-light">
-      <div class="container">
-        <h2>What We Do</h2>
-        <div class="card-custom">
-          <ul>
-            <li><strong>Carbon Accounting:</strong> Helping organizations measure, monitor, and reduce greenhouse gas emissions.</li>
-            <li><strong>ESG Reporting and Benchmarking:</strong> Delivering transparent reports and comparative analysis.</li>
-            <li><strong>Life Cycle Assessment (LCA):</strong> Evaluating the environmental impacts of products and services.</li>
-            <li><strong>Sustainable Supply Chain Management:</strong> Promoting responsible sourcing and efficiency.</li>
-            <li><strong>Circular Economy Strategies:</strong> Designing solutions to minimize waste and maximize resource use.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Choose -->
-    <section class="section">
-      <div class="container">
-        <h2>Why Choose Planetary Plus?</h2>
-        <div class="card-custom">
-          <ul>
-            <li><strong>Expertise:</strong> Experience in sectors like energy, logistics, and finance.</li>
-            <li><strong>Tailored Solutions:</strong> Customized strategies for unique business needs.</li>
-            <li><strong>Measurable Impact:</strong> Data-driven methodologies for meaningful outcomes.</li>
-            <li><strong>Commitment to Innovation:</strong> Leveraging the latest tools and technologies.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Green Leadership Initiative -->
-    <section class="section">
-      <div class="container">
-        <h2>The Green Leadership Initiative</h2>
-        <div class="card-custom">
-          <p>
-            Our Green Leadership Initiative emphasizes environmental impact, social responsibility, economic benefits, and investor attraction.
-          </p>
-        </div>
-      </div>
-    </section>
+    </body>
     
    
       <footer>
@@ -354,6 +276,7 @@
           </div>
       
           <!-- Footer Bottom -->
+           
           <div class="row align-items-center footer-bottom">
             <div class="col-md-6">
               <p class="mb-0">© 2024 EcoBrand+. All Rights Reserved</p>
