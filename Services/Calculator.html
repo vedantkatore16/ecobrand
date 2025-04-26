@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carbon Emission Calculator</title>
+  <style>
+    :root {
+      --bg-color: #f4f6f8;
+      --text-color: #2c3e50;
+      --card-bg: #ffffff;
+      --highlight: #1abc9c;
+      --shadow: rgba(0, 0, 0, 0.08);
+    }
+    body.dark-mode {
+      --bg-color: #1e272e;
+      --text-color: #f1f2f6;
+      --card-bg: #2f3640;
+      --highlight: #1abc9c;
+      --shadow: rgba(255, 255, 255, 0.05);
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 40px;
+      max-width: 960px;
+      margin: auto;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 32px;
+    }
+    section {
+      background: var(--card-bg);
+      padding: 30px;
+      margin: 30px 0;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px var(--shadow);
+      display: none;
+    }
+    label {
+      display: block;
+      margin: 16px 0 8px;
+      font-weight: 500;
+    }
+    input, select {
+      padding: 12px;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+      border: 1px solid #bbb;
+      margin-bottom: 16px;
+      font-size: 16px;
+      background-color: var(--card-bg);
+      color: var(--text-color);
+    }
+    button {
+      padding: 14px 28px;
+      background-color: var(--highlight);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 10px 10px 10px 0;
+    }
+    button:hover {
+      filter: brightness(0.9);
+    }
+    .reset-button { background-color: #e74c3c; }
+    .back-button { background-color: #7f8c8d; position: absolute; top: 20px; left: 20px; }
+    .add-button { background-color: #2980b9; }
+    .remove-button { background-color: #c0392b; }
+    .dark-toggle {
+      position: absolute;
+      top: 20px;
+      right: 80px;
+      background-color: var(--card-bg);
+      color: var(--text-color);
+      border: 1px solid #ccc;
+    }
+    .result {
+      font-weight: 600;
+      margin-top: 30px;
+      padding: 24px;
+      background: #ecf0f1;
+      color: #34495e;
+      border-left: 6px solid var(--highlight);
+      border-radius: 10px;
+      white-space: pre-line;
+    }
+    .scroll-top-button {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      background-color: #1abc9c;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      display: none;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <a href="Home.html"><button class="back-button" onclick="goHome()">⬅ Back</button></a>
+  <button class="dark-toggle" onclick="toggleDarkMode()">🌓</button>
+  <h1>Carbon Emission Calculator</h1>
+
+  <label for="category">Choose a category to calculate:</label>
+  <select id="category" onchange="showCategory()">
+    <option value="">-- Select a Category --</option>
+    <option value="all">All Categories</option>
+    <option value="home">At Home</option>
+    <option value="vehicles">Private Vehicles</option>
+    <option value="public">Public Transport</option>
+    <option value="flights">Flights</option>
+    <option value="food">Food</option>
+    <option value="expenditure">Expenditure</option>
+    <option value="other">Other Emissions</option>
+  </select>
+
+  <form id="carbonForm">
+    <button type="button" class="reset-button" onclick="resetForm()">Reset All</button>
+
+    <section id="home">
+      <h2>1. At Home</h2>
+      <label>Electricity usage (kWh):</label>
+      <input type="number" id="electricity" />
+      <label>Natural Gas usage (therms):</label>
+      <input type="number" id="gas" />
+    </section>
+
+    <section id="vehicles">
+      <h2>2. Private Vehicles</h2>
+      <div id="vehicleContainer"></div>
+      <button type="button" class="add-button" onclick="addVehicle()">Add Vehicle</button>
+    </section>
+
+    <section id="public">
+      <h2>3. Public Transport</h2>
+      <div id="publicContainer"></div>
+      <button type="button" class="add-button" onclick="addPublicTransport()">Add Transport</button>
+    </section>
+
+    <section id="flights">
+      <h2>4. Flights</h2>
+      <label>Short haul (km):</label>
+      <input type="number" id="shortFlight" />
+      <label>Long haul (km):</label>
+      <input type="number" id="longFlight" />
+    </section>
+
+    <section id="food">
+      <h2>5. Food</h2>
+      <label>Meat/Dairy-heavy diet (kg CO₂ per week):</label>
+      <input type="number" id="foodMeat" />
+      <label>Plant-based diet (kg CO₂ per week):</label>
+      <input type="number" id="foodPlant" />
+    </section>
+
+    <section id="expenditure">
+      <h2>6. Expenditure</h2>
+      <label>Monthly shopping emissions (kg CO₂):</label>
+      <input type="number" id="expenditureInput" />
+    </section>
+
+    <section id="other">
+      <h2>7. Other Emissions</h2>
+      <label>Other CO₂ sources (kg):</label>
+      <input type="number" id="otherInput" />
+    </section>
+
+    <button type="button" onclick="calculateEmissions()">Calculate Total Emissions</button>
+    <button type="button" onclick="downloadReport()">Download Report</button>
+    <button type="button" class="reset-button" onclick="resetForm()">Reset All</button>
+  </form>
+
+  <div class="result" id="result"></div>
+  <button class="scroll-top-button" onclick="scrollToTop()">↑</button>
+
+  <script>
+    let vehicleCount = 0;
+    let publicCount = 0;
+
+    function showCategory() {
+      const selected = document.getElementById('category').value;
+      const sections = ['home', 'vehicles', 'public', 'flights', 'food', 'expenditure', 'other'];
+      sections.forEach(section => {
+        document.getElementById(section).style.display = (selected === 'all' || selected === section) ? 'block' : 'none';
+      });
+      document.getElementById('result').innerHTML = '';
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', isDark);
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function goHome() {
+      window.location.href = '/';
+    }
+
+    function addVehicle() {
+      vehicleCount++;
+      const container = document.getElementById('vehicleContainer');
+      const div = document.createElement('div');
+      div.innerHTML = `<label>Vehicle ${vehicleCount} Fuel Used (liters):</label><input type="number" class="vehicleFuel" />`;
+      container.appendChild(div);
+    }
+
+    function addPublicTransport() {
+      publicCount++;
+      const container = document.getElementById('publicContainer');
+      const div = document.createElement('div');
+      div.innerHTML = `<label>Public Transport ${publicCount} Distance (km):</label><input type="number" class="publicKm" />`;
+      container.appendChild(div);
+    }
+
+    function calculateEmissions() {
+      const electricity = parseFloat(document.getElementById('electricity')?.value) || 0;
+      const gas = parseFloat(document.getElementById('gas')?.value) || 0;
+      const vehicleFuels = [...document.querySelectorAll('.vehicleFuel')].map(input => parseFloat(input.value) || 0);
+      const publicKms = [...document.querySelectorAll('.publicKm')].map(input => parseFloat(input.value) || 0);
+      const shortFlight = parseFloat(document.getElementById('shortFlight')?.value) || 0;
+      const longFlight = parseFloat(document.getElementById('longFlight')?.value) || 0;
+      const foodMeat = parseFloat(document.getElementById('foodMeat')?.value) || 0;
+      const foodPlant = parseFloat(document.getElementById('foodPlant')?.value) || 0;
+      const expenditure = parseFloat(document.getElementById('expenditureInput')?.value) || 0;
+      const other = parseFloat(document.getElementById('otherInput')?.value) || 0;
+
+      const electricityFactor = 0.5;
+      const gasFactor = 5.3;
+      const fuelFactor = 2.3;
+      const publicTransportFactor = 0.1;
+      const shortFlightFactor = 0.15;
+      const longFlightFactor = 0.11;
+
+      const homeEmissions = electricity * electricityFactor + gas * gasFactor;
+      const vehicleEmissions = vehicleFuels.reduce((sum, val) => sum + val * fuelFactor, 0);
+      const publicEmissions = publicKms.reduce((sum, val) => sum + val * publicTransportFactor, 0);
+      const flightEmissions = shortFlight * shortFlightFactor + longFlight * longFlightFactor;
+      const foodEmissions = foodMeat * 4 + foodPlant * 1;
+      const total = homeEmissions + vehicleEmissions + publicEmissions + flightEmissions + foodEmissions + expenditure + other;
+
+      const report = `
+        Home Emissions: ${homeEmissions.toFixed(2)} kg CO₂
+        Vehicle Emissions: ${vehicleEmissions.toFixed(2)} kg CO₂
+        Public Transport Emissions: ${publicEmissions.toFixed(2)} kg CO₂
+        Flight Emissions: ${flightEmissions.toFixed(2)} kg CO₂
+        Food Emissions: ${foodEmissions.toFixed(2)} kg CO₂
+        Expenditure Emissions: ${expenditure.toFixed(2)} kg CO₂
+        Other Emissions: ${other.toFixed(2)} kg CO₂
+        -----------------------------
+        Total Carbon Emissions: ${total.toFixed(2)} kg CO₂`;
+
+      document.getElementById('result').innerText = report;
+      localStorage.setItem('carbonReport', report);
+    }
+
+    function downloadReport() {
+      const report = localStorage.getItem('carbonReport');
+      const blob = new Blob([report], { type: 'text/plain' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'carbon_emission_report.txt';
+      link.click();
+    }
+
+    window.onload = function () {
+      if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+      }
+      showCategory();
+      const scrollBtn = document.querySelector('.scroll-top-button');
+      window.onscroll = function () {
+        scrollBtn.style.display = (window.scrollY > 200) ? 'block' : 'none';
+      };
+    }
+  </script>
+</body>
+</html>
