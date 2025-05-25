@@ -54,11 +54,10 @@
       --dark-green: #1a5632;
     }
     body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background-color: #f8f9fa;
         color: #333;
       }
-
       .section {
         padding: 40px 15px;
       }
@@ -73,7 +72,7 @@
         border-radius: 10px;
         padding: 20px;
         margin-bottom: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
       }
       .blog-title {
         font-size: 1.25rem;
@@ -84,6 +83,25 @@
         color: #666;
         margin-bottom: 10px;
       }
+
+      form h4 {
+        color: var(--primary-green);
+      }
+      form input,
+      form textarea {
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+      }
+      form button {
+        background-color: var(--primary-green);
+        color: white;
+        border: none;
+      }
+      form button:hover {
+        background-color: var(--dark-green);
+      }
+
       
       footer {
       background-color: #12243A;
@@ -147,7 +165,7 @@
         <div class="collapse navbar-collapse show">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="Home.html">Home</a>
+              <a class="nav-link" href="./Home.html">Home</a>
             </li>
 
             <li class="nav-item dropdown">
@@ -165,9 +183,8 @@
               </ul>
             </li>
 
-           
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button">
+              <a class="nav-link dropdown-toggle" href="./Sectors/energy.html" role="button">
                 Sectors
               </a>
               <ul class="dropdown-menu">
@@ -211,10 +228,15 @@
               </ul>
             </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="./Blog.html">Blog</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="./Blog.html" role="button">
+                Blogs
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Latest News</a></li>
+                <li><a class="dropdown-item" href="#">Insights</a></li>
+              </ul>
             </li>
-              
 
             <li class="nav-item">
               <a class="nav-link" href="./About.html">About Us</a>
@@ -232,9 +254,50 @@
     <body>
       <div class="container section">
         <h2>Latest News</h2>
-        <div class="alert alert-info" role="alert">
-          Blog posts are yet to be added. Stay tuned for updates!
+        <div class="blog-card">
+          <div class="blog-title">EcoBrand Launches Net-Zero Carbon Framework</div>
+          <div class="blog-meta">April 25, 2025 | by EcoBrand Team</div>
+          <p>EcoBrand has introduced a comprehensive Net-Zero Carbon Framework for businesses across all sectors to reduce emissions and achieve long-term sustainability goals.</p>
         </div>
+  
+        <div class="blog-card">
+          <div class="blog-title">New Guidelines for ESG Reporting in 2025</div>
+          <div class="blog-meta">April 18, 2025 | by EcoBrand Insights</div>
+          <p>The 2025 ESG Reporting Guidelines are out now. Learn what changes are coming and how your business can prepare for full compliance and increased transparency.</p>
+        </div>
+      </div>
+
+      <form class="mt-5" id="addNewsForm">
+        <h4 class="mb-3">Add Your Blog</h4>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="title" placeholder="Blog Title" required />
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="author" placeholder="Author Name" required />
+        </div>
+        <div class="mb-3">
+          <textarea class="form-control" id="content" rows="3" placeholder="Blog Content" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+
+    <script>
+      const form = document.getElementById('addNewsForm');
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const title = document.getElementById('title').value;
+        const author = document.getElementById('author').value;
+        const content = document.getElementById('content').value;
+        const container = document.querySelector('.container.section');
+        const newCard = document.createElement('div');
+        newCard.className = 'blog-card';
+        newCard.innerHTML = <div class="blog-title">${title}</div><div class="blog-meta">Submitted by ${author}</div><p>${content}</p>;
+        container.insertBefore(newCard, form);
+        form.reset();
+      });
+      
+    </script>
     </body>
     
    
@@ -253,7 +316,7 @@
               <a href="./Home.html" class="footer-link">Home</a>
               <a href="./Services/Carbon.html" class="footer-link">Services</a>
               <a href="./About.html" class="footer-link">About Us</a>
-              <a href="./Sectors/experiment.html" class="footer-link">Sector</a>
+              <a href="./Sectors/energy.html" class="footer-link">Sector</a>
               <a href="./Contact.html" class="footer-link">Contact Us</a>
             </div>
       
@@ -276,7 +339,6 @@
           </div>
       
           <!-- Footer Bottom -->
-           
           <div class="row align-items-center footer-bottom">
             <div class="col-md-6">
               <p class="mb-0">© 2024 EcoBrand+. All Rights Reserved</p>
@@ -290,5 +352,5 @@
         </div>
       </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+  </body>
 </html>
